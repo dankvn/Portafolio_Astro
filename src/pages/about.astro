@@ -1,0 +1,144 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+  title="About | Jeanine White"
+  description="About Jeanine White Lorem Ipsum"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="Sobre Mi"
+        tagline="A continuación, encontrarás más detalles sobre mí y mi experiencia."
+      >
+        <img
+          width="1553"
+          height="873"
+          src="/assets/at-work.jpg"
+          alt="Jeanine White at work with a colleague"
+        />
+      </Hero>
+
+      <section>
+        <h2 class="section-title">ACERCA DE MÍ</h2>
+        <div class="content">
+          <p>
+            Como desarrollador de software y pentester, tengo una sólida formación y experiencia en la creación de aplicaciones y sistemas seguros y de alta calidad.
+			 A lo largo de mi carrera, he adquirido habilidades técnicas y conocimientos especializados que me permiten analizar, identificar y solucionar vulnerabilidades en los sistemas de información. 
+			 A continuación, te presento una descripción más detallada sobre mí
+          </p>
+		  <br/>
+		  	<p>Con una sólida formación en ciencias de la computación y desarrollo de software, poseo un amplio conocimiento de los principios y mejores prácticas en el diseño, 
+			desarrollo y mantenimiento de aplicaciones. </p>
+			<p>
+			Mi experiencia abarca el ciclo de vida completo del desarrollo de software, desde la recopilación de requisitos y el diseño hasta la implementación y pruebas, siempre con un enfoque en la calidad y la seguridad. Como 
+			pentester, utilizo técnicas y herramientas especializadas para identificar vulnerabilidades en aplicaciones y sistemas, realizar pruebas de penetración y evaluar la seguridad general de los sistemas informáticos.</p>
+			
+		  	<br/>
+		  	<p>Tengo experiencia en el uso de metodologías reconocidas, como OWASP Testing Guide y OSSTMM, para realizar pruebas exhaustivas de seguridad y garantizar que los sistemas estén protegidos contra ataques cibernéticos.
+			Me apasiona el desarrollo de software seguro y la protección de los sistemas contra amenazas cibernéticas. Siempre busco oportunidades para mejorar mis habilidades y contribuir al fortalecimiento de la seguridad en el ámbito digital.
+		  	</p>
+		  <br/>
+		  <p>Estoy familiarizado con una amplia gama de tecnologías y lenguajes de programación, como Java, Python, C#, HTML, CSS, JavaScript, así como frameworks y herramientas populares.</p>
+		  <br/>
+		  
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">EDUCACIÓN</h2>
+        <div class="content">
+          <p class="section-title">Instituto Superior Tecnológico Sucre.</p>
+          <p>Técnologo. Desarrollo de Software</p>
+          <p class="section-title">Educación Básica-Secundaria.</p>
+          <p>Colegio Juan Montalvo.</p>
+
+          <p></p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">HABILIDADES</h2>
+        <div class="content">
+          <p>
+            • Conocimiento en lenguajes de programación y herramientas de
+            desarrollo como Python, PHP, HTML.
+          </p>
+
+          <p>
+            • Conocimientos en metodologías de desarrollo ágiles y buenas
+            prácticas de programación.
+          </p>
+
+          <p>• Experiencia en pruebas de penetración y seguridad informática.</p>
+          <p>
+            • Conocimientos en sistemas operativos, redes, protocolos de
+            seguridad, y herramientas de pentesting
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
